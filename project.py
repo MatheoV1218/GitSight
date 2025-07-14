@@ -63,7 +63,8 @@ for repo in data:
             languageCount[language] += 1
         else:
             languageCount[language] = 1
-        
+
+# This is the summary of the account
 mostUsedLanguage = max(languageCount, key = languageCount.get)
 print("Total Repositories: " + str(RepoCount))
 print("Total stars: " + str(StarCount))
