@@ -33,6 +33,7 @@ def fetch_github_summary(GitName: str) -> str:
     RepoCount = 0
     languageCount = {}
     StarCount = 0
+    totalCommits = 0
     summary = f"GitHub summary for user: {GitName}\n\n"
 
     for repo in data:
@@ -69,6 +70,8 @@ def fetch_github_summary(GitName: str) -> str:
 
         for lang in lang_data:
             languageCount[lang] = languageCount.get(lang, 0) + 1
+
+       
 
         summary += "\n"
 

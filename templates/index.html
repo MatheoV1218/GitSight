@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitSight - AI GitHub Profile Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🔍 GitSight</h1>
+        <p>AI-powered GitHub profile analyzer</p>
+    </header>
+
+    <form method="POST">
+        <input type="text" name="github_username" placeholder="Enter GitHub username" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if error %}
+        <div class="result error">
+            <strong>Error:</strong> {{ error }}
+        </div>
+    {% endif %}
+
+    {% if username %}
+    <div class="result section-box">
+        <h3>📄 Summary for {{ username }}</h3>
+    </div>
+    {% endif %}
+
+    {% if strengths %}
+        <div class="result section-box">
+            <h3>✅ Strengths</h3>
+            <ul>
+                {% for point in strengths %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if weaknesses %}
+        <div class="result section-box">
+            <h3>⚠️ Weaknesses</h3>
+            <ul>
+                {% for point in weaknesses %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if suggestions %}
+        <div class="result section-box">
+            <h3>💡 Suggestions for Improvement</h3>
+            <ul>
+                {% for point in suggestions %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if projects %}
+        <div class="result section-box">
+            <h3>🛠️ What to Build Next</h3>
+            <ul>
+                {% for point in projects %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+
+</body>
+</html>
