@@ -1,71 +1,57 @@
-# GitSight 🔍
+# 🔍 GitSight
 
-GitSight is a Python-based tool that analyzes any public GitHub user's profile and provides a **smart summary** of their repositories — including stars, programming languages, and more. It's designed to be beginner-friendly, recruiter-useful, and a great way for developers to review or showcase their GitHub activity.
+**GitSight** is an AI-powered web app that analyzes any public GitHub profile and summarizes it into strengths, weaknesses, suggestions for improvement, and personalized project recommendations.
 
----
-
-## 🚀 Features
-
-- 🔎 **Enter any GitHub username**
-- 📦 Lists all **public repositories**
-- ⭐ Counts **total stars** received across all repos
-- 🧠 Identifies the **most used programming language**
-- 📋 Shows each repo's:
-  - Name
-  - Primary language
-  - Description
-  - Star count
-  - Last updated time
-  - Languages used (via GitHub's language API)
-- ❌ Handles common errors:
-  - Invalid usernames
-  - Users with no public repositories
-  - Rate limits or API issues
+It’s perfect for developers who want quick feedback on their GitHub presence without reading through every repo manually.
 
 ---
 
-## 👤 Who Is This For?
+## 💡 Features
 
-- **Job Seekers:** Use it to scan your own profile and identify resume-worthy highlights
-- **Recruiters:** Quickly assess a candidate’s GitHub activity and repo quality
-- **Educators/Peers:** Review student or peer coding portfolios
-- **Hackers & Builders:** Use it as a base to build something bigger (AI suggestions, visual dashboards, web app)
-
----
-
-## 🖥️ Demo Output Example
-
+- 🔍 Analyze any public GitHub username
+- 📊 Clear feedback on coding strengths and weaknesses
+- 🧠 AI-generated suggestions for improvement
+- 🧪 Project ideas tailored to your skillset
+- 📦 Clean, responsive UI with categorized results
 
 ---
 
-## ⚙️ How It Works
+## 🧠 How It Works
 
-1. The user inputs a **GitHub username**
-2. GitSight calls the **GitHub REST API** to fetch:
-   - Profile info
-   - Public repositories
-   - Language data for each repo
-3. It summarizes the data and prints it to the terminal
+1. The user enters a GitHub username.
+2. The app uses the GitHub REST API to fetch all public repositories.
+3. It compiles relevant information like:
+   - Repo name
+   - Description
+   - Star count
+   - Primary language
+   - Last updated time
+   - README presence
+   - Total commits (approximate)
+4. This summary is sent to OpenAI’s API for analysis.
+5. The response is parsed and displayed in four sections:
+   - Strengths
+   - Weaknesses
+   - Suggestions
+   - What to Build Next
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- **Python 3.x**
-- `requests` (for API calls)
-- GitHub REST API v3
+| Category   | Tools/Frameworks             |
+|------------|------------------------------|
+| Backend    | Python, Flask                |
+| Frontend   | HTML, CSS                    |
+| APIs       | GitHub REST API, OpenAI API  |
+| Security   | dotenv (.env) for API keys   |
 
 ---
 
-## 📦 Installation & Usage
+## 🧪 Running Locally
 
-### ✅ Requirements
-- Python 3.x installed
-- Internet connection
+### 1. Clone the repository
 
-### 🧪 Run It Locally
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/MatheoV1218/GitSight.git
-   cd GitSight
+```bash
+git clone https://github.com/MatheoV1218/GitSight.git
+cd GitSight
